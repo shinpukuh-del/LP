@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>公益社団法人鹿児島青年会議所 2026年度6月例会｜学ぶ × 創る。未来を動かす生成AI</title>
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
+      color: #f8fafc;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(139,92,246,0.35), transparent 28%),
+        radial-gradient(circle at 85% 18%, rgba(59,130,246,0.22), transparent 24%),
+        radial-gradient(circle at 20% 85%, rgba(217,70,239,0.22), transparent 24%),
+        radial-gradient(circle at 78% 82%, rgba(34,211,238,0.16), transparent 22%),
+        linear-gradient(180deg, #050816 0%, #0b1024 48%, #070b18 100%);
+      line-height: 1.75;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(120deg, transparent 0%, rgba(167,139,250,0.08) 18%, transparent 36%),
+        linear-gradient(300deg, transparent 0%, rgba(96,165,250,0.08) 18%, transparent 36%);
+      mix-blend-mode: screen;
+      opacity: .9;
+    }
+    a { text-decoration: none; color: inherit; }
+    .container {
+      width: 100%;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 1;
+    }
+    .section { padding: 88px 0; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(8px);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: #e9d5ff;
+      box-shadow: 0 0 0 1px rgba(167,139,250,0.08) inset;
+    }
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 48px 0 72px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(24px);
+      opacity: .55;
+      pointer-events: none;
+    }
+    .hero::before {
+      width: 420px;
+      height: 420px;
+      left: -120px;
+      bottom: -120px;
+      background: radial-gradient(circle, rgba(217,70,239,0.35) 0%, rgba(59,130,246,0.03) 70%, transparent 100%);
+    }
+    .hero::after {
+      width: 380px;
+      height: 380px;
+      right: -100px;
+      top: -60px;
+      background: radial-gradient(circle, rgba(96,165,250,0.3) 0%, rgba(167,139,250,0.04) 70%, transparent 100%);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 34px;
+      align-items: center;
+    }
+    .hero h1 {
+      margin: 24px 0 0;
+      font-size: clamp(40px, 6vw, 72px);
+      line-height: 1.14;
+      letter-spacing: -0.04em;
+      font-weight: 800;
+      text-shadow: 0 0 18px rgba(192,132,252,0.28);
+    }
+    .hero .sub-title {
+      margin-top: 16px;
+      font-size: clamp(18px, 2.3vw, 28px);
+      line-height: 1.5;
+      color: #e9d5ff;
+      font-weight: 500;
+    }
+    .hero .lead {
+      margin-top: 24px;
+      max-width: 720px;
+      color: #cbd5e1;
+      font-size: 17px;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 16px 26px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 15px;
+      transition: .2s ease;
+      border: 1px solid transparent;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary {
+      color: #fff;
+      background: linear-gradient(90deg, #8b5cf6 0%, #d946ef 100%);
+      box-shadow: 0 0 26px rgba(168,85,247,0.35);
+    }
+    .btn-secondary {
+      color: #e2e8f0;
+      background: rgba(255,255,255,0.04);
+      border-color: rgba(255,255,255,0.16);
+      backdrop-filter: blur(8px);
+    }
+    .glass,
+    .card,
+    .step,
+    .timeline-item,
+    .faq-item,
+    .cta,
+    .note-box {
+      background: linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.04) 100%);
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 18px 42px rgba(2,6,23,0.28), inset 0 1px 0 rgba(255,255,255,0.06);
+      backdrop-filter: blur(16px);
+    }
+    .hero-panel {
+      border-radius: 28px;
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-panel::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 28px;
+      padding: 1px;
+      background: linear-gradient(135deg, rgba(217,70,239,0.65), rgba(96,165,250,0.55), rgba(255,255,255,0.08));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+              mask-composite: exclude;
+      pointer-events: none;
+    }
+    .hero-panel h2,
+    .section-title {
+      margin: 0;
+      font-size: clamp(28px, 3vw, 42px);
+      line-height: 1.25;
+      letter-spacing: -0.03em;
+      font-weight: 800;
+    }
+    .section-lead {
+      margin-top: 16px;
+      color: #cbd5e1;
+      font-size: 16px;
+      max-width: 820px;
+    }
+    .meta-grid,
+    .target-grid,
+    .points-grid,
+    .faq-grid,
+    .program-grid,
+    .summary-grid {
+      display: grid;
+      gap: 18px;
+    }
+    .meta-grid {
+      grid-template-columns: repeat(3, 1fr);
+      margin-top: 28px;
+    }
+    .meta-card,
+    .card,
+    .step,
+    .timeline-item,
+    .faq-item,
+    .note-box { border-radius: 24px; }
+    .meta-card {
+      padding: 18px 18px 16px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+    .meta-card .label {
+      color: #c4b5fd;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+    .meta-card .value {
+      margin-top: 8px;
+      color: #f8fafc;
+      font-size: 15px;
+    }
+    .bullets {
+      margin-top: 22px;
+      display: grid;
+      gap: 12px;
+    }
+    .bullet {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.05);
+      color: #e2e8f0;
+    }
+    .bullet .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #d946ef 0%, #60a5fa 100%);
+      margin-top: 10px;
+      flex: 0 0 auto;
+      box-shadow: 0 0 14px rgba(217,70,239,0.45);
+    }
+    .section-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.14) 50%, transparent 100%);
+    }
+    .target-grid,
+    .points-grid,
+    .faq-grid,
+    .summary-grid { grid-template-columns: repeat(2, 1fr); }
+    .program-grid { grid-template-columns: 1fr; }
+    .card,
+    .faq-item,
+    .note-box {
+      padding: 24px;
+      color: #e2e8f0;
+    }
+    .card strong,
+    .faq-item strong,
+    .timeline-time,
+    .step-index,
+    .mini-label { color: #f5d0fe; }
+    .step {
+      padding: 28px;
+      display: grid;
+      grid-template-columns: 96px 1fr;
+      gap: 20px;
+      align-items: start;
+      position: relative;
+    }
+    .step-index {
+      width: 76px;
+      height: 76px;
+      border-radius: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      background: linear-gradient(180deg, rgba(217,70,239,0.22), rgba(96,165,250,0.14));
+      border: 1px solid rgba(255,255,255,0.14);
+    }
+    .step h3,
+    .timeline-title,
+    .faq-q,
+    .card h3 {
+      margin: 0;
+      font-size: 24px;
+      line-height: 1.35;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #fff;
+    }
+    .step p,
+    .card p,
+    .timeline-body,
+    .faq-a,
+    .note-box p { margin: 12px 0 0; color: #cbd5e1; }
+    .timeline {
+      margin-top: 28px;
+      display: grid;
+      gap: 16px;
+    }
+    .timeline-item {
+      padding: 22px 24px;
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 22px;
+      align-items: start;
+    }
+    .timeline-time {
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: .02em;
+    }
+    .timeline-title {
+      font-size: 21px;
+    }
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+    .info-box {
+      border-radius: 28px;
+      padding: 28px;
+    }
+    .info-box .row {
+      display: grid;
+      gap: 18px;
+      margin-top: 22px;
+    }
+    .info-item .mini-label {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .info-item .text {
+      margin-top: 6px;
+      color: #f8fafc;
+      font-size: 16px;
+    }
+    .highlight {
+      color: #f5d0fe;
+      font-weight: 700;
+    }
+    .note-box {
+      margin-top: 18px;
+      border-left: 3px solid rgba(217,70,239,0.8);
+    }
+    .entry-box {
+      margin-top: 24px;
+      border-radius: 22px;
+      border: 1.5px dashed rgba(255,255,255,0.28);
+      padding: 28px 20px;
+      text-align: center;
+      color: #cbd5e1;
+      background: rgba(255,255,255,0.03);
+    }
+    .cta {
+      border-radius: 32px;
+      padding: 42px;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(139,92,246,0.16), rgba(217,70,239,0.08), rgba(96,165,250,0.12));
+      pointer-events: none;
+    }
+    .cta > * { position: relative; z-index: 1; }
+    .small {
+      font-size: 14px;
+      color: #94a3b8;
+    }
+    footer {
+      padding: 28px 0 50px;
+      color: #94a3b8;
+      font-size: 13px;
+      text-align: center;
+    }
+    @media (max-width: 980px) {
+      .hero-grid,
+      .two-col,
+      .target-grid,
+      .points-grid,
+      .faq-grid,
+      .summary-grid,
+      .meta-grid,
+      .timeline-item,
+      .step {
+        grid-template-columns: 1fr;
+      }
+      .hero { min-height: auto; }
+      .timeline-item { gap: 10px; }
+      .step-index { width: 72px; height: 72px; }
+      .cta { padding: 30px 24px; }
+      .section { padding: 72px 0; }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">公益社団法人鹿児島青年会議所　2026年度6月例会</div>
+          <h1>学ぶ × 創る。<br>未来を動かす生成AI</h1>
+          <div class="sub-title">生成AIを「知る」から「使う」へ。<br>ゲームとワークで学ぶ生成AI体験例会</div>
+          <p class="lead">
+            生成AIを実際に操作しながら、何ができるのか、どのような指示を出せば望む答えが返ってくるのかを体験的に学びます。
+            その後、自分の仕事やJC活動の流れを整理し、どの作業にAIを活用できるかを考え、簡単なアプリやコンテンツの作成に挑戦します。
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#entry">申込はこちら</a>
+            <a class="btn btn-secondary" href="#program">当日の流れを見る</a>
+          </div>
+          <div class="meta-grid">
+            <div class="meta-card">
+              <div class="label">日時</div>
+              <div class="value">2026年6月23日(火)<br>19:00〜21:00<br>受付開始 18:30〜</div>
+            </div>
+            <div class="meta-card">
+              <div class="label">会場</div>
+              <div class="value">鹿児島県医師会館 大ホール<br>〒890-0053 鹿児島県鹿児島市中央町8-1</div>
+            </div>
+            <div class="meta-card">
+              <div class="label">対象</div>
+              <div class="value">業務改善やAI活用に関心のある経営者および担当者</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass hero-panel">
+          <h2>この例会で目指すこと</h2>
+          <div class="bullets">
+            <div class="bullet"><div class="dot"></div><div>生成AIの基本と、成果を左右する<strong>プロンプト設計</strong>の考え方を理解する</div></div>
+            <div class="bullet"><div class="dot"></div><div>自分の業務やJC活動を分解し、<strong>AIに頼める作業</strong>を見つける</div></div>
+            <div class="bullet"><div class="dot"></div><div>Google AI Studioを使い、<strong>簡単なアプリやコンテンツ</strong>を実際に作る</div></div>
+            <div class="bullet"><div class="dot"></div><div>例会後に、職場や組織で<strong>実装に移せる状態</strong>まで持っていく</div></div>
+          </div>
+          <div class="note-box">
+            <p><strong>特徴</strong><br>講義中心ではなく、ゲーム、実演、ワーク、制作体験を一連で行う参加型構成です。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">このような方に適しています</h2>
+      <p class="section-lead">
+        生成AIに関心はあるが、業務での使い方が見えていない方、実際に触れながら学びたい方、
+        自社や自組織の課題にどう結びつけるか考えたい方に向けた内容です。
+      </p>
+      <div class="target-grid" style="margin-top:28px;">
+        <div class="card"><h3>AIに興味はあるが、使い方が分からない</h3><p>何ができるのかは聞いたことがあるが、自分の仕事と結びついていない方。</p></div>
+        <div class="card"><h3>業務改善の糸口を探している</h3><p>資料作成、整理、検討、連絡など、繰り返し発生する業務の効率化を考えている方。</p></div>
+        <div class="card"><h3>実際に触って理解したい</h3><p>見るだけのセミナーではなく、自分の手で試しながら理解したい方。</p></div>
+        <div class="card"><h3>組織内でDXを進める足がかりが欲しい</h3><p>自社や団体でデジタル活用を進める際の、最初の一歩を整理したい方。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section class="section" id="program">
+    <div class="container">
+      <h2 class="section-title">例会の構成</h2>
+      <p class="section-lead">
+        本例会では、生成AIを用いて当委員会で作成したゲームやアプリを操作しながら、
+        「AIに何ができるのか」と「どう頼めばよいのか」を体験的に学びます。
+        そのうえで、日常業務やJC活動の具体的な場面に引き寄せ、実際の活用方法を検討し、制作まで行います。
+      </p>
+
+      <div class="program-grid" style="margin-top:30px;">
+        <div class="step">
+          <div class="step-index">Work 1</div>
+          <div>
+            <h3>プロンプトマスターへの道</h3>
+            <p>
+              Google AI Studioで作成したオリジナルゲームを各テーブルでプレイし、
+              クイズ形式でプロンプトの重要性を学びます。
+              <span class="highlight">目的・対象・条件（形式・量・制約）</span>をどう整理すると成果が変わるかを、
+              チームで試行錯誤しながら理解します。
+            </p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-index">Work 2</div>
+          <div>
+            <h3>AIツール 実践トライアル</h3>
+            <p>
+              用意した業務課題カードから課題を選定し、プロンプトを設計します。
+              そのプロンプトを無料サービスのGoogle AI Studioに入力し、
+              実際に簡単なアプリやコンテンツを制作します。
+            </p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-index">Work 3</div>
+          <div>
+            <h3>AI実装作戦会議</h3>
+            <p>
+              ワークシートを用いて自身の業務課題を分解し、
+              「どのような作業か」「何を入力し、何を出力させるか」を整理しながら、
+              自分の業務に置き換えたプロンプトを作成します。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">当日の流れ</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-time">18:30〜</div>
+          <div>
+            <div class="timeline-title">開場・受付</div>
+            <div class="timeline-body">事前の参加情報をもとに席配置を行い、受付時に席番号を配布します。対外参加者は業種が近い方同士を同卓とし、交流と検討がしやすい環境を整えます。</div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-time">19:00〜19:10</div>
+          <div>
+            <div class="timeline-title">開会・理事長挨拶・趣旨説明</div>
+            <div class="timeline-body">事業の目的と、本例会で何を持ち帰っていただきたいかを共有します。</div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-time">19:10〜19:15</div>
+          <div>
+            <div class="timeline-title">自己紹介</div>
+            <div class="timeline-body">同じテーブルの参加者同士で、名前、所属、本日持ち帰りたいことを共有します。</div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-time">19:15〜19:25</div>
+          <div>
+            <div class="timeline-title">Work① プロンプトマスターへの道</div>
+            <div class="timeline-body">クイズ形式のゲームを通じて、プロンプトの考え方を体験的に学びます。</div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-time">19:25〜19:35</div>
+          <div>
+            <div class="timeline-title">Google AI Studio解説 & アプリ制作事例紹介</div>
+            <div class="timeline-body">ゲームの作成背景と考え方を解説し、当委員会が作成したアプリやコンテンツ事例を紹介します。</div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-time">19:35〜20:05</div>
+          <div>
+            <div class="timeline-title">Work② AIツール 実践トライアル</div>
+            <div class="timeline-body">業務課題カードを使い、プロンプト設計から実制作までを行います。</div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-time">20:05〜20:35</div>
+          <div>
+            <div class="timeline-title">Work③ AI実装作戦会議</div>
+            <div class="timeline-body">自身の業務課題をもとに、AIをどう実装するかを検討し、業務に使える形へ落とし込みます。</div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-time">20:35〜20:40</div>
+          <div>
+            <div class="timeline-title">実装の誓い</div>
+            <div class="timeline-body">各テーブルで取り組んだ内容を共有し、20日以内に完成させることを確認します。後日アンケートフォームを通じて成果を収集し、委員会内で公開します。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section class="section">
+    <div class="container">
+      <div class="two-col">
+        <div class="glass info-box">
+          <h2 class="section-title" style="font-size:34px;">開催概要</h2>
+          <div class="row">
+            <div class="info-item">
+              <div class="mini-label">事業名</div>
+              <div class="text">公益社団法人鹿児島青年会議所 2026年度6月例会<br>～学ぶ × 創る。未来を動かす生成AI～</div>
+            </div>
+            <div class="info-item">
+              <div class="mini-label">日時</div>
+              <div class="text">2026年6月23日(火) 19:00〜21:00<br>受付開始 18:30〜</div>
+            </div>
+            <div class="info-item">
+              <div class="mini-label">会場</div>
+              <div class="text">鹿児島県医師会館 大ホール<br>〒890-0053 鹿児島県鹿児島市中央町8-1</div>
+            </div>
+            <div class="info-item">
+              <div class="mini-label">対象者</div>
+              <div class="text">業務改善やAI活用に関心のある経営者および担当者</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass info-box">
+          <h2 class="section-title" style="font-size:34px;">参加メリット</h2>
+          <div class="bullets">
+            <div class="bullet"><div class="dot"></div><div>生成AIの使い方だけでなく、<strong>設計の考え方</strong>まで理解できる</div></div>
+            <div class="bullet"><div class="dot"></div><div>自分の業務に置き換え、<strong>何に活用できるか</strong>を整理できる</div></div>
+            <div class="bullet"><div class="dot"></div><div>その場で制作し、<strong>例会後の実践</strong>につながる形まで進められる</div></div>
+            <div class="bullet"><div class="dot"></div><div>他の参加者との対話を通じて、<strong>業種や立場を超えた活用視点</strong>を得られる</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">事業後のビジョン</h2>
+      <p class="section-lead">
+        生成AIやデジタル技術を積極的に推進する人口が増加し、DXが企業や組織の中で広がることを目指します。
+        デジタル技術を柔軟に活用する文化が定着し、集いひらくまち鹿児島の実現につなげていきます。
+      </p>
+      <div class="summary-grid" style="margin-top:28px;">
+        <div class="card"><h3>個人の変化</h3><p>参加者一人ひとりが、AIを「知っている」状態から「自分で使える」状態へ移行することを目指します。</p></div>
+        <div class="card"><h3>組織の変化</h3><p>企業や団体内で、デジタル活用を柔軟に受け入れ、試し、広げていく文化を醸成します。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section class="section" id="entry">
+    <div class="container">
+      <div class="cta">
+        <h2 class="section-title" style="margin:0;">まずは、触れて、考えて、作ってみる。</h2>
+        <p class="section-lead" style="max-width:800px; margin-top:18px;">
+          本例会は、生成AIの便利さを知るだけで終わらせず、実際の業務やJC活動にどう活かすかまで踏み込む体験の場です。
+          興味のある方は、下記よりお申し込みください。
+        </p>
+        <div class="entry-box">申込フォームURLをここに設置</div>
+        <div class="hero-actions" style="margin-top:22px;">
+          <a class="btn btn-primary" href="#">申込フォームへ</a>
+        </div>
+        <p class="small" style="margin-top:18px;">※お申し込み締切、定員、QRコード等は運用時に追記してください。</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    公益社団法人鹿児島青年会議所　2026年度6月例会
+  </footer>
+</body>
+</html>
